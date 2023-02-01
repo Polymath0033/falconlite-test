@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap");
+.backdrop {
+    background-color: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+}
+
+.App {
+    display: grid;
+    grid-template-columns: 65% 35%;
+    height: 90vh;
+    width: 100%;
+    position: relative;
+    top: 30px;
+    bottom: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.side {
+    background-color: #01c8ff;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    border-radius: 0 14px 14px 0;
+}
+
+.App main {
+    background-color: #e3ecff;
+    padding: 2rem 3rem 1rem 2rem;
+    border-radius: 14px 0 0 14px;
+}
+
+.logo {
+    display: flex;
+    color: black;
+    justify-content: center;
+    height: 30px;
+    align-items: center;
+}
+
+.circle-one,
+.circle-two {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    margin: 0;
+}
+
+.circle-one {
+    background-color: #01c8ff;
+    border: 3px solid #e3ecff;
+}
+
+.circle-two {
+    position: relative;
+    z-index: 100;
+    background-color: #003b4b;
+    right: 10px;
+    border: 3px solid #e3ecff;
+}
+
+.logo h1 {
+    font-style: italic;
+    font-family: "Inter", sans-serif;
+    color: #003b4b;
+    font-size: 20px;
+    position: relative;
+    z-index: 100000;
+    right: 5px;
+}
+
+.sup {
+    font-weight: 100;
+    font-size: 10px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-style: normal;
+    color: #003b4b;
+    font-weight: bold;
+    margin-top: -5px;
+}
+
+.lite {
+    color: #01c8ff;
+}
+
+.side img {
+    width: 350px;
+    position: relative;
+    left: -50px;
+    z-index: 100;
+}
+
+.error {
+    font-weight: bold;
+    font-family: "Poppins";
+    color: red;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.spinner {
+    border-radius: 50%;
+    border-color: #0d0d26 #0d0d26 transparent #0d0d26;
+    border-width: 3px;
+    border-style: solid;
+    width: 20px;
+    height: 20px;
+    animation: spinner 0.2s infinite;
+    margin-left: 1rem;
+}
+
+@keyframes spinner {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .App {
+        grid-template-columns: 100%;
+    }
+    .App main {
+        border-radius: 14px;
+    }
+    .side {
+        display: none;
+    }
+}

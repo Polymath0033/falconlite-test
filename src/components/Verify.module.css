@@ -1,0 +1,62 @@
+.header {
+    margin-top: 3rem;
+    margin-bottom: 4rem;
+}
+
+.header h4 {
+    font-family: "Montserrat";
+    color: #0d0d26;
+}
+
+.header p {
+    color: #4b4a4a;
+    font-family: "Poppins";
+}
+
+.verify {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    width: 75%;
+    gap: 1rem;
+}
+
+.form input {
+    padding: 1rem 0.5rem;
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+    border: 1px solid #01c8ff;
+    background-color: transparent;
+    height: 40px;
+    font-size: 2.8rem;
+    height: 80px;
+    text-align: center;
+    outline: none;
+    width: 100%;
+}
+
+.form input:focus {
+    border: 1px solid #003b4b;
+    outline: 1px solid #003b4b;
+}
+
+.form button {
+    display: flex;
+    grid-column: 1 / span 6;
+    background-color: #01c8ff;
+    border: none;
+    border-radius: 5px;
+    padding: 0.6rem;
+    font-size: 20px;
+    color: #4b4a4a;
+    font-family: "Montserrat";
+    margin-top: 4rem;
+    justify-content: center;
+    align-items: center;
+}
