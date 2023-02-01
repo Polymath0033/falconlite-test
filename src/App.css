@@ -10,12 +10,13 @@
     display: grid;
     grid-template-columns: 65% 35%;
     height: 90vh;
-    width: 100%;
+    width: 85%;
     position: relative;
     top: 30px;
     bottom: 20px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
     z-index: 1000;
+    margin: 0 auto;
 }
 
 .side {
@@ -120,9 +121,16 @@
     }
 }
 
+@media screen and (max-width: 960px) {
+    .side img {
+        width: 280px;
+    }
+}
+
 @media screen and (max-width: 720px) {
     .App {
         grid-template-columns: 100%;
+        width: 100%;
     }
     .App main {
         border-radius: 14px;

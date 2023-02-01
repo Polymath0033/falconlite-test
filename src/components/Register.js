@@ -11,6 +11,7 @@ const Register = () => {
   const [isLoading, setISLoading] = useState(false);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
+  const [isRemember, setIsRemember] = useState(false);
   const {
     value: firstNameValue,
     isValid: firstNameIsValid,
@@ -50,17 +51,17 @@ const Register = () => {
   const changeType = () => {
     setType(type === "password" ? "text" : "password");
   };
+
   const submitFormHandler = async (e) => {
     e.preventDefault();
     if (!formIsValid) {
       return;
     }
-    console.log({
-      name: firstNameValue,
-      email: emailValue,
-      phone: phoneValue,
-      password: passwordValue,
-    });
+    if (isRemember) {
+      localStorage.setItem("remember", true);
+    } else {
+      localStorage.removeItem("remember");
+    }
     try {
       setISLoading(true);
       const response = await fetch("https://falconlite.com/v1/api/send-email", {
@@ -95,6 +96,9 @@ const Register = () => {
     resetEmail();
     resetPhone();
     resetPassword();
+  };
+  const rememberHandler = ({ target }) => {
+    setIsRemember(target.checked);
   };
 
   return (
@@ -182,7 +186,9 @@ const Register = () => {
         </div>
         <div className={classes.remember}>
           <input type="checkbox" name="remember-me" id="remember-me" />
-          <label htmlFor="remember-me">Remember me</label>
+          <label htmlFor="remember-me" onChange={rememberHandler}>
+            Remember me
+          </label>
         </div>
         <div className={classes.last}>
           <button className={classes.button} type="submit">
